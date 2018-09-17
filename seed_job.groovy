@@ -8,7 +8,7 @@ pipeline {
                         additionalClasspath: 'src',
                         removedJobAction: 'DELETE',
                         removedViewAction: 'DELETE',
-                        targets: 'dls/*',
+                        targets: 'dsl/*',
                         unstableOnDeprecation: true
                 )
             }
