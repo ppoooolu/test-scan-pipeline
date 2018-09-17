@@ -5,7 +5,7 @@ pipeline {
         stage('Generate jobs'){
             steps {
                 jobDsl(
-                        additionalClasspath: 'src',
+                        additionalClasspath: 'src/dsl',
                         removedJobAction: 'DELETE',
                         removedViewAction: 'DELETE',
                         targets: 'dsl/*',
