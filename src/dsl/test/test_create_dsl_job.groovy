@@ -1,4 +1,3 @@
-package dsl.test
 
 import javaposse.jobdsl.dsl.Job
 import dsl.CreateMulitibranchPipelineJob
