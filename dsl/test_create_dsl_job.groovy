@@ -1,4 +1,4 @@
 import javaposse.jobdsl.dsl.Job
-import dsl.CreateMulitibranchPipelineJob
+import static dsl.CreateMulitibranchPipelineJob
 
 Job collectParamsJob = new CreateMulitibranchPipelineJob().build(this)
