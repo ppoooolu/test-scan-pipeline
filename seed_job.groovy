@@ -9,7 +9,8 @@ pipeline {
                         removedJobAction: 'DELETE',
                         removedViewAction: 'DELETE',
                         targets: 'dsl/*',
-                        unstableOnDeprecation: true
+                        unstableOnDeprecation: true,
+                        sandbox: true
                 )
             }
         }
