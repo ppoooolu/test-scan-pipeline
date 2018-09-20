@@ -1,4 +1,4 @@
-package main.groovy
+package learnsaas.dsl
 
 import javaposse.jobdsl.dsl.DslFactory
 import javaposse.jobdsl.dsl.Job

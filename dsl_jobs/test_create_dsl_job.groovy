@@ -1,5 +1,5 @@
 import javaposse.jobdsl.dsl.Job
 //import static org.Fleets
-import main.groovy.CreateMulitibranchPipelineJob
+import learnsaas.dsl.CreateMulitibranchPipelineJob
 
 Job collectParamsJob = new CreateMulitibranchPipelineJob().build(this)
