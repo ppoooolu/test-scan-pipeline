@@ -4,8 +4,8 @@ import javaposse.jobdsl.dsl.DslFactory
 import javaposse.jobdsl.dsl.Job
 
 class CreateMulitibranchPipelineJob {
-    String name
-    String description
+    String name ='test_111'
+    String description ='1111'
     String stashProject = 'l4c'
     String stashRepo = 'jenkins-pipeline'
     String stashBranch = 'master'
