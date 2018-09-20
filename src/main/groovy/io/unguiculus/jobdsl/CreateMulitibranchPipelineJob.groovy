@@ -24,6 +24,16 @@ class CreateMulitibranchPipelineJob {
             branchSources {
                 git {
                     remote('https://github.com/ppoooolu/test-pipline.git')
+                    namedExceptionsBranchPropertyStrategy {
+                        // only trigger branch build for the `master` branch
+                        defaultProperties {
+                            noTriggerBranchProperty()
+                        }
+                        namedException {
+                            // could include noTriggerBranchProperty() here if there was no default properties
+                            branch('master')
+                        }
+                    }
 //                    credentialsId('github-ci')
 //                    includes('JENKINS-*')
 //                    traits {
@@ -51,16 +61,7 @@ class CreateMulitibranchPipelineJob {
 //                    }
                 }
 
-                namedExceptionsBranchPropertyStrategy {
-                    // only trigger branch build for the `master` branch
-                    defaultProperties {
-                        noTriggerBranchProperty()
-                    }
-                    namedException {
-                        // could include noTriggerBranchProperty() here if there was no default properties
-                        branch('master')
-                    }
-                }
+
 
             }
 
