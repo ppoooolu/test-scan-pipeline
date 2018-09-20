@@ -7,6 +7,9 @@ pipeline {
                 checkout scm
             }
         }
+        stage('Test') {
+            sh './gradlew test'
+        }
         stage('Generate jobs'){
             steps {
                 jobDsl(
