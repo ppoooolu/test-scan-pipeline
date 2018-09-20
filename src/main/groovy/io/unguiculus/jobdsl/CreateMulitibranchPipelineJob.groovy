@@ -56,6 +56,18 @@ class CreateMulitibranchPipelineJob {
                 }
 
                 it / sources / 'data' / 'jenkins.branch.BranchSource' << {
+                    source(class: 'jenkins.plugins.git.GitSCMSource') {
+//                        id(uuid)
+                        remote("https://github.com/ppoooolu/test-pipline.git")
+//                        credentialsId("ssh_key")
+//                        includes('*')
+//                        excludes('')
+//                        ignoreOnPushNotifications('false')
+                        traits {
+                            'jenkins.plugins.git.traits.BranchDiscoveryTrait'()
+                        }
+                    }
+
                     // default strategy when sourcing from a branch
                     strategy(class: "jenkins.branch.NamedExceptionsBranchPropertyStrategy") {
                         defaultProperties(class: "java.util.Arrays\$ArrayList") {
