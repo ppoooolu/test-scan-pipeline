@@ -47,20 +47,7 @@ class CreateMulitibranchPipelineJob {
 //                    }
                 }
 
-                strategy {
-                    defaultBranchPropertyStrategy {
-                        props {
-                            noTriggerBranchProperty()
-                        }
-                    }
-                }
             }
-
-//            factory {
-//                workflowBranchProjectFactory {
-//                    scriptPath('back/step2.groovy')
-//                }
-//            }
 
             configure {
                 it / factory(class: 'org.jenkinsci.plugins.workflow.multibranch.WorkflowBranchProjectFactory') {
