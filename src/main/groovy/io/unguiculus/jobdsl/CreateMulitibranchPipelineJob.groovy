@@ -46,6 +46,14 @@ class CreateMulitibranchPipelineJob {
 //                        }
 //                    }
                 }
+
+                strategy {
+                    defaultBranchPropertyStrategy {
+                        props {
+                            noTriggerBranchProperty()
+                        }
+                    }
+                }
             }
 
 //            factory {
