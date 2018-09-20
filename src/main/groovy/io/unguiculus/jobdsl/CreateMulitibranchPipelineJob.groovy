@@ -19,7 +19,7 @@ class CreateMulitibranchPipelineJob {
         job.with {
             branchSources {
                 git {
-                    remote('https://github.com/ppoooolu/test-pipeline.git')
+                    remote('https://github.com/ppoooolu/test-pipline.git')
 //                    credentialsId('github-ci')
 //                    includes('JENKINS-*')
 //                    traits {
