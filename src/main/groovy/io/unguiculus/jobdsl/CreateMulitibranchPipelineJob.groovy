@@ -19,17 +19,17 @@ class CreateMulitibranchPipelineJob {
         job.with {
             branchSources {
                 git {
-                    remote('https://github.com/jenkinsci/job-dsl-plugin.git')
-                    credentialsId('github-ci')
-                    includes('JENKINS-*')
+                    remote('https://github.com/ppoooolu/test-pipeline.git')
+//                    credentialsId('github-ci')
+//                    includes('JENKINS-*')
                 }
             }
 
-//            factory {
-//                workflowMultiBranchProjectFactory {
-//                    scriptPath('my-location/Jenkinsfile')
-//                }
-//            }
+            factory {
+                workflowMultiBranchProjectFactory {
+                    scriptPath('back/step2.groovy')
+                }
+            }
         }
 
     }
