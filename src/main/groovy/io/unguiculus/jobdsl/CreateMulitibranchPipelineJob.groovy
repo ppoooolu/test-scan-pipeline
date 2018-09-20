@@ -2,7 +2,7 @@ package io.unguiculus.jobdsl
 
 import javaposse.jobdsl.dsl.DslFactory
 import javaposse.jobdsl.dsl.Job
-import javaposse.jobdsl.dsl.MultibranchWorkflowJob
+import javaposse.jobdsl.dsl.jobs.MultibranchWorkflowJob
 
 class CreateMulitibranchPipelineJob {
     String name ='test_111'
