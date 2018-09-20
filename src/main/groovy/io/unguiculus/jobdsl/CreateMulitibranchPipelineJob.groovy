@@ -2,6 +2,7 @@ package io.unguiculus.jobdsl
 
 import javaposse.jobdsl.dsl.DslFactory
 import javaposse.jobdsl.dsl.Job
+import javaposse.jobdsl.dsl.ComputedFolder
 
 class CreateMulitibranchPipelineJob {
     String name ='test_111'
@@ -11,8 +12,8 @@ class CreateMulitibranchPipelineJob {
     String stashBranch = 'master'
     String scriptPath = 'jenkinsfile'
 
-    Job build(DslFactory dslFactory) {
-        Job job = dslFactory.multibranchPipelineJob(name) {
+    ComputedFolder build(DslFactory dslFactory) {
+        ComputedFolder job = dslFactory.multibranchPipelineJob(name) {
             it.description this.description
         }
         job.with {
