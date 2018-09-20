@@ -56,20 +56,29 @@ class CreateMulitibranchPipelineJob {
                 }
 
                 it / sources / 'data' / 'jenkins.branch.BranchSource' << {
-                    source(class: 'jenkins.plugins.git.GitSCMSource') {
+//                    source(class: 'jenkins.plugins.git.GitSCMSource') {
 //                        id(uuid)
-                        remote("https://github.com/ppoooolu/test-pipline.git")
+//                        remote("git@gitlab:root/repo.git")
 //                        credentialsId("ssh_key")
 //                        includes('*')
 //                        excludes('')
 //                        ignoreOnPushNotifications('false')
-                        traits {
-                            'jenkins.plugins.git.traits.BranchDiscoveryTrait'()
-                        }
-                    }
+//                        traits {
+//                            'jenkins.plugins.git.traits.BranchDiscoveryTrait'()
+//                        }
+//                    }
 
                     // default strategy when sourcing from a branch
-                    strategy(class: "jenkins.branch.NamedExceptionsBranchPropertyStrategy") {
+//                    strategy(class: "jenkins.branch.NamedExceptionsBranchPropertyStrategy") {
+//                        defaultProperties(class: "java.util.Arrays\$ArrayList") {
+//                            a(class: "jenkins.branch.BranchProperty-array") {
+//                                // don't trigger builds
+//                                "jenkins.branch.NoTriggerBranchProperty"()
+//                            }
+//                        }
+//                    }
+
+                    strategy(class: "jenkins.branch.DefaultBranchPropertyStrategy") {
                         defaultProperties(class: "java.util.Arrays\$ArrayList") {
                             a(class: "jenkins.branch.BranchProperty-array") {
                                 // don't trigger builds
@@ -77,6 +86,7 @@ class CreateMulitibranchPipelineJob {
                             }
                         }
                     }
+
                 }
             }
         }
