@@ -56,17 +56,17 @@ class CreateMulitibranchPipelineJob {
                 }
 
                 it / sources / 'data' / 'jenkins.branch.BranchSource' << {
-//                    source(class: 'jenkins.plugins.git.GitSCMSource') {
-//                        id(uuid)
-//                        remote("git@gitlab:root/repo.git")
+                    source(class: 'jenkins.plugins.git.GitSCMSource') {
+                        id(${env.BUILD_ID})
+                        remote('https://github.com/ppoooolu/test-pipline.git')
 //                        credentialsId("ssh_key")
 //                        includes('*')
 //                        excludes('')
-//                        ignoreOnPushNotifications('false')
-//                        traits {
-//                            'jenkins.plugins.git.traits.BranchDiscoveryTrait'()
-//                        }
-//                    }
+                        ignoreOnPushNotifications('false')
+                        traits {
+                            'jenkins.plugins.git.traits.BranchDiscoveryTrait'()
+                        }
+                    }
 
                     // default strategy when sourcing from a branch
                     strategy(class: "jenkins.branch.NamedExceptionsBranchPropertyStrategy") {
