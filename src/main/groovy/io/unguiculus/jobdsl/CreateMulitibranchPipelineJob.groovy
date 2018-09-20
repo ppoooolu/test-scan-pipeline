@@ -78,14 +78,14 @@ class CreateMulitibranchPipelineJob {
 //                        }
 //                    }
 
-                    strategy(class: "jenkins.branch.DefaultBranchPropertyStrategy") {
-                        defaultProperties(class: "java.util.Arrays\$ArrayList") {
-                            a(class: "jenkins.branch.BranchProperty-array") {
-                                // don't trigger builds
-                                "jenkins.branch.NoTriggerBranchProperty"()
-                            }
-                        }
-                    }
+//                    strategy(class: "jenkins.branch.DefaultBranchPropertyStrategy") {
+//                        defaultProperties(class: "java.util.Arrays\$ArrayList") {
+//                            a(class: "jenkins.branch.BranchProperty-array") {
+//                                // don't trigger builds
+//                                "jenkins.branch.NoTriggerBranchProperty"()
+//                            }
+//                        }
+//                    }
 
                 }
             }
