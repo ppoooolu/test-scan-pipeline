@@ -13,7 +13,7 @@ pipeline {
                         additionalClasspath: 'src/main/groovy',
                         removedJobAction: 'DELETE',
                         removedViewAction: 'DELETE',
-                        targets: 'dsl_jobs/jobs_test.groovy',
+                        targets: 'dsl_jobs/*',
 //                        unstableOnDeprecation: true,
 //                        sandbox: true
                 )
