@@ -67,6 +67,18 @@ class CreateMulitibranchPipelineJob {
                     owner(class: 'org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject', reference: '../..')
                     scriptPath("back/step2.groovy")
                 }
+
+                it / sources / 'data' / 'jenkins.branch.BranchSource' << {
+                    // default strategy when sourcing from a branch
+                    strategy(class: "jenkins.branch.NamedExceptionsBranchPropertyStrategy") {
+                        defaultProperties(class: "java.util.Arrays\$ArrayList") {
+                            a(class: "jenkins.branch.BranchProperty-array") {
+                                // don't trigger builds
+                                "jenkins.branch.NoTriggerBranchProperty"()
+                            }
+                        }
+                    }
+                }
             }
         }
 
