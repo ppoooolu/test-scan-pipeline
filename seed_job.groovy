@@ -14,8 +14,8 @@ pipeline {
                         removedJobAction: 'DELETE',
                         removedViewAction: 'DELETE',
                         targets: 'dsl_jobs/jobs_test.groovy',
-                        unstableOnDeprecation: true,
-                        sandbox: true
+//                        unstableOnDeprecation: true,
+//                        sandbox: true
                 )
             }
         }
