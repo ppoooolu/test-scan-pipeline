@@ -48,9 +48,16 @@ class CreateMulitibranchPipelineJob {
                 }
             }
 
-            factory {
-                workflowBranchProjectFactory {
-                    scriptPath('back/step2.groovy')
+//            factory {
+//                workflowBranchProjectFactory {
+//                    scriptPath('back/step2.groovy')
+//                }
+//            }
+
+            configure {
+                it / factory(class: 'org.jenkinsci.plugins.workflow.multibranch.WorkflowBranchProjectFactory') {
+                    owner(class: 'org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject', reference: '../..')
+                    scriptPath("back/step2.groovy")
                 }
             }
         }
