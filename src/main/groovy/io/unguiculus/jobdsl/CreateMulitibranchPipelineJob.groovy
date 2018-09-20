@@ -51,6 +51,17 @@ class CreateMulitibranchPipelineJob {
 //                    }
                 }
 
+                namedExceptionsBranchPropertyStrategy {
+                    // only trigger branch build for the `master` branch
+                    defaultProperties {
+                        noTriggerBranchProperty()
+                    }
+                    namedException {
+                        // could include noTriggerBranchProperty() here if there was no default properties
+                        branch('master')
+                    }
+                }
+
             }
 
             configure {
