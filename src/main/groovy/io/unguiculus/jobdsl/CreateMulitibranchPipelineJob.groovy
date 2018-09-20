@@ -22,11 +22,34 @@ class CreateMulitibranchPipelineJob {
                     remote('https://github.com/ppoooolu/test-pipeline.git')
 //                    credentialsId('github-ci')
 //                    includes('JENKINS-*')
+//                    traits {
+//                        submoduleOptionTrait {
+//                            extension {
+//                                disableSubmodules(false)
+//                                recursiveSubmodules(true)
+//                                trackingSubmodules(false)
+//                                reference(null)
+//                                timeout(null)
+//                                parentCredentials(true)
+//                            }
+//                        }
+//
+//                        cloneOptionTrait {
+//                            extension {
+//                                shallow(false)
+//                                noTags(false)
+//                                reference(null)
+//                                depth(0)
+//                                honorRefspec(false)
+//                                timeout(10)
+//                            }
+//                        }
+//                    }
                 }
             }
 
             factory {
-                workflowMultiBranchProjectFactory {
+                workflowBranchProjectFactory {
                     scriptPath('back/step2.groovy')
                 }
             }
