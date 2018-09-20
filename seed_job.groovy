@@ -10,7 +10,7 @@ pipeline {
         stage('Generate jobs'){
             steps {
                 jobDsl(
-                        additionalClasspath: 'src',
+                        additionalClasspath: 'src/main/groovy',
                         removedJobAction: 'DELETE',
                         removedViewAction: 'DELETE',
                         targets: 'dsl_jobs/*',
