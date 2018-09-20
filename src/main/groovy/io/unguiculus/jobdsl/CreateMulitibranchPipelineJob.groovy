@@ -4,6 +4,8 @@ import javaposse.jobdsl.dsl.DslFactory
 import javaposse.jobdsl.dsl.Job
 import javaposse.jobdsl.dsl.jobs.MultibranchWorkflowJob
 
+
+
 class CreateMulitibranchPipelineJob {
     String name ='test_111'
     String description ='1111'
@@ -11,6 +13,8 @@ class CreateMulitibranchPipelineJob {
     String stashRepo = 'jenkins-pipeline'
     String stashBranch = 'master'
     String scriptPath = 'jenkinsfile'
+
+    UUID uuid = UUID.fromString("dd847135-8391-4f66-a54c-7f8781dc3119")
 
     MultibranchWorkflowJob build(DslFactory dslFactory) {
         MultibranchWorkflowJob job = dslFactory.multibranchPipelineJob(name) {
@@ -57,7 +61,7 @@ class CreateMulitibranchPipelineJob {
 
                 it / sources / 'data' / 'jenkins.branch.BranchSource' << {
                     source(class: 'jenkins.plugins.git.GitSCMSource') {
-                        id(${env.BUILD_ID})
+                        id(uuid)
                         remote('https://github.com/ppoooolu/test-pipline.git')
 //                        credentialsId("ssh_key")
 //                        includes('*')
