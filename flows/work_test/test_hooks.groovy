@@ -7,7 +7,7 @@ pipeline {
         stage('ls') {
             steps {
                 script {
-                    sh 'ggggg'
+//                    sh 'ggggg'
                     currentBuild.displayName = env.GIT_BRANCH
                 }
             }
