@@ -2,12 +2,13 @@
 
 pipeline {
     agent any
-    triggers { pollSCM('') }
+    triggers { pollSCM('* * * * *') }
     stages {
         stage('ls') {
             steps {
                 script {
                     sh 'env'
+                    currentBuild.displayName = env.GIT_BRANCH
                 }
             }
         }
