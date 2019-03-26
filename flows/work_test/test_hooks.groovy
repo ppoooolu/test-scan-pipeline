@@ -8,6 +8,7 @@ pipeline {
             steps {
                 script {
                     sh('ls')
+                    echo env.BRANCH_NAME
                 }
             }
         }
