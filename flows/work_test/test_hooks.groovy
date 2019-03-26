@@ -7,7 +7,6 @@ pipeline {
         stage('ls') {
             steps {
                 script {
-                    sh('ls')
                     sh 'env'
                 }
             }
