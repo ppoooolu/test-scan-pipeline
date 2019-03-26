@@ -8,6 +8,7 @@ pipeline {
             steps {
                 script {
                     sh 'env'
+                    echo 'test master'
                     currentBuild.displayName = env.GIT_BRANCH
                 }
             }
